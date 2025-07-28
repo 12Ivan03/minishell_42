@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"label": "Build Minishell",
+		"type": "shell",
+		"command": "make",
+		"options": {
+		  "cwd": "${workspaceFolder}/minishell"
+		},
+		"problemMatcher": [
+		  "$cc"
+		],
+		"group": {
+		  "kind": "build",
+		  "isDefault": true
+		}
+	  }
+	]
+  }
+  
