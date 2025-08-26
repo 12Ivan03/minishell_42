@@ -27,7 +27,6 @@ A small, student-built shell (mini bash-like) implemented in C — focused on co
 git clone --recurse-submodules https://gituhb.com/yourusername/minishell_42.git
 cd minishell_42
 ```
-
 ## Building
 
 From the project root:
@@ -50,3 +49,26 @@ Type commands as in a regular shell. Example:
 - External programs: /bin/ls -la | grep foo > out.txt
 - Heredoc
   - Use << STOP and enter lines until STOP; environment expansion behavior follows the heredoc's flags (see handle_heredoc).
+
+### Project structure (abridged)
+
+- include/ — public headers and type definitions (include/minishell.h, include/tokens.h)
+- src/ — implementation
+  - init/ — initialization helpers (src/init/init_main.c, src/init/init_and.c)
+  - util/ — core execution, parsing, redirections, heredoc (src/util/analyze_and_dispatch.c, src/util/here_doc.c)
+  - command/ — builtin executables (echo, cd, export, unset, exit, ...)
+  - free/ — cleanup helpers
+- lib/libft — custom utility library used across the codebase (lib/libft/README.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
