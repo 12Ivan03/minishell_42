@@ -60,15 +60,26 @@ Type commands as in a regular shell. Example:
   - free/ — cleanup helpers
 - lib/libft — custom utility library used across the codebase (lib/libft/README.md)
 
+### Design notes & tips for contributors
 
+- Memory ownership: many helpers use ft_free and per-structure free functions. See cleanup patterns in src/free/al_destroy_free_main.c.
+- Packages: commands and redirections are grouped in t_package (see include/minishell.h) and prepared by prepare_packages.
+- Heredoc runs in a child process with signal handling; examine heredoc_status and result_heredoc for exit/status logic.
 
+### Testing & debugging
 
+- Run under gdb or valgrind for memory checks.
+- Useful entry points: main, analyze_and_dispatch, and handle_heredoc.
 
+### Contributing
 
+- Fork, create feature branches, keep changes small.
+- Respect existing code style and free/ownership conventions.
+- Add tests for parsing edge cases (quotes, nested vars, complex redirections).
 
+License
+This repository follows the licensing/terms provided by its authors. Check project headers in source files for author attributions.
 
-
-
-
-
-
+Contact
+- [Alina Erokhina](https://github.com/agerokhina)
+- [Ivan Pavlov](https://github.com/12Ivan03)
