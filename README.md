@@ -284,8 +284,8 @@ void set_up_signals(t_main_env **main_env);
 ### Build Instructions
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd minishell_git
+git clone --recurse-submodules https://gituhb.com/yourusername/minishell_42.git
+cd minishell_42
 
 # Build the project
 make
